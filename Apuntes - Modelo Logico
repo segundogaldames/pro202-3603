@@ -1,0 +1,55 @@
+Reglas de transformacion desde el modelo E-R al modelo logico
+
+1) Cuando la cardinalidad de una interrelacion binaria es 1:1 => FK, que puede ubicarse en cualquiera de las entidades que forman la interrelacion
+2) Cuando la cardinalidad de una interrelacion binaria es 1:N => FK, que se ubica en la entidad que tiene el muchos
+3) Cuando la cardinalidad de una interrelacion binaria es N:M => nueva relacion, compuesta por las claves primarias de las entidades que componen la interrelacion
+4) En las interrelaciones ternarias y/o n-arias, la interrelacion pasa a ser una nueva relacion, compuesta por las claves primarias de las entidades que la conforman
+
+Modelo Logico: denotar las relaciones existentes entre entidades, mostrando sus Claves primarias y foraneas
+
+I Parte: transformacion de las interrelaciones del modelo
+
+Venta: Producto - Cliente - Vendedor
+Producto(cod_producto, nombre, precio),
+Cliente(rut_cliente, nombre, telefono),
+Vendedor(rut_vendedor, nombre),
+Venta(cod_venta, fecha-hora, cod_producto, rut_cliente, rut_vendedor);
+
+Adquisicion: Producto - Proveedor
+Producto(cod_producto, nombre, precio),
+Proveedor(rut_proveedor, nombre, direccion, ciudad),
+Adquisicion(cod_adquisicion, cantidad, cod_producto, rut_proveedor);
+
+Pago: Cliente - Medio De Pago
+Cliente(rut_cliente, nombre, telefono),
+MedioDePago(cod_medio, origen, rut_cliente);
+
+II Parte: transformacion de las especializaciones/ generalizaciones
+
+a) Considerar cada entidad de la E/G, tomando en cuenta que hay una superclase que comparte naturaleza y atributos con sus subclases
+	MedioDePago(cod_medio, origen, rut_cliente),
+	Efectivo(folio, valor, cod_medio),
+	TC(numero, cvv, cod_medio),
+	TD(numero, cod_medio);
+	
+b) Considerar a todas las subclases de la E/G como entidades independientes
+	Efectivo(folio, valor),
+	TC(numero, cvv, origen),
+	TD(numero, origen);
+	
+c) Considerar que las entidades subclases de E/G puedan ser parte de una superclase que agrupe estas entidades como datos significaativos y que la actual superclase pase a ser una subclase, invirtiendo la cardinalidad implicita, de tal forma que la nueva superclase comparta su clave foranea con la nueva subclase
+	TipoMedioPago(cod_tipo, nombre),
+	MedioPago(cod_medio, origen, rut_cliente,cod_tipo);
+	
+E/G Medio Pago
+TipoMedioPago(cod_tipo, nombre),
+MedioPago(cod_medio, origen, rut_cliente,cod_tipo);
+
+E/G Producto - Tipo - Categoria
+Categoria(cod_categoria, nombre),
+TipoProducto(cod_tipo, nombre, cod_categoria),
+Producto(cod_producto, nombre, precio, cod_tipo);	
+
+
+
+
