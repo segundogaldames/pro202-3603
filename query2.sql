@@ -40,7 +40,8 @@ INSERT INTO usuarios(clave,activo,empleado_id) VALUES(sha('jgonzalez.123'),1,2);
 --modificar la clave
 update usuarios SET clave = SHA('jgonzalez.123') WHERE empleado_id = 2;
 
-select * from usuarios;
+select * from comunas;
+
 
 --login: correo y su clave
 select u.id as usuario_id, e.nombre as usuarios
@@ -58,5 +59,6 @@ ALTER TABLE empleados modify email varchar(100) not null UNIQUE;
 
 select id from empleados where rut like '%12968521%';
 
+use ferreteria;
 
-
+select * from comunas;

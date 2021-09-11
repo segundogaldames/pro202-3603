@@ -55,10 +55,12 @@ insert into comunas(nombre, region_id) values('Curico',4);
 insert into comunas(nombre, region_id) values('Peor Es Nada',2);
 insert into comunas(nombre, region_id) values('La Serena',3);
 
-/* 
+/*
 	insercion masiva de datos
     peligrosa desde el punto de vista de la seguridad de datos
 */
 insert into roles values(null,'Vendedor');
 
 select * from comunas;
+
+select * from empleados;
