@@ -87,7 +87,42 @@ create View empleados_comuna as
     LEFT JOIN ventas v ON v.usuario_id = u.id;
 
 
-
 select * from empleados_comuna;
 
+--calcular el total de ventas de una fecha
+select monthname(fecha_hora) as fecha, count(id) as cuenta from ventas
+where fecha_hora >= '2021-09-25'
+GROUP BY fecha;
 
+
+select count(id) as total from telefonos where telefonoable_type = 'empleados';
+
+
+
+create view empl_comunas  as
+select c.nombre as comuna, COUNT(e.id) as total
+FROM empleados e INNER JOIN comunas c
+on e.comuna_id = c.id
+GROUP BY comuna;
+
+SELECT * FROM empl_comunas;
+
+INSERT INTO
+  usuarios(clave, activo, empleado_id)
+VALUES(sha1('123456'), 1, 2);
+
+select e.nombre as usuario, u.activo from empleados e INNER JOIN usuarios u ON e.id = u.empleado_id;
+
+INSERT INTO
+  usuarios(clave, activo, empleado_id)
+VALUES(sha1('Kjara.123'), 1, 5);
+
+ALTER table ventas modify cliente_id int;
+
+INSERT INTO
+  ventas(fecha_hora, usuario_id, cliente_id)
+VALUES(now(), 2, NULL);
+
+INSERT INTO
+  usuarios(clave, activo, empleado_id)
+VALUES(sha1('Lperez.123'), 1, 4);

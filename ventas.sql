@@ -1,0 +1,20 @@
+INSERT INTO ventas(fecha_hora,usuario_id,cliente_id) VALUES(now(),2, NULL);
+INSERT INTO ventas(fecha_hora,usuario_id,cliente_id) VALUES(now(),2, NULL);
+INSERT INTO ventas(fecha_hora,usuario_id,cliente_id) VALUES(now(),2, NULL);
+INSERT INTO ventas(fecha_hora,usuario_id,cliente_id) VALUES(now(),2, NULL);
+INSERT INTO ventas(fecha_hora,usuario_id,cliente_id) VALUES(now(),2, NULL);
+INSERT INTO ventas(fecha_hora,usuario_id,cliente_id) VALUES(now(),2, NULL);
+INSERT INTO ventas(fecha_hora,usuario_id,cliente_id) VALUES(now(),2, NULL);
+INSERT INTO ventas(fecha_hora,usuario_id,cliente_id) VALUES(now(),3, NULL);
+INSERT INTO ventas(fecha_hora,usuario_id,cliente_id) VALUES(now(),3, NULL);
+INSERT INTO ventas(fecha_hora,usuario_id,cliente_id) VALUES(now(),3, NULL);
+INSERT INTO ventas(fecha_hora,usuario_id,cliente_id) VALUES(now(),3, NULL);
+INSERT INTO ventas(fecha_hora,usuario_id,cliente_id) VALUES(now(),3, NULL);
+INSERT INTO ventas(fecha_hora,usuario_id,cliente_id) VALUES(now(),3, NULL);
+INSERT INTO ventas(fecha_hora,usuario_id,cliente_id) VALUES(now(),3, NULL);
+INSERT INTO ventas(fecha_hora,usuario_id,cliente_id) VALUES(now(),3, NULL);
+INSERT INTO ventas(fecha_hora,usuario_id,cliente_id) VALUES(now(),3, NULL);
+INSERT INTO ventas(fecha_hora,usuario_id,cliente_id) VALUES(now(),3, NULL);
+INSERT INTO ventas(fecha_hora,usuario_id,cliente_id) VALUES(now(),3, NULL);
+INSERT INTO ventas(fecha_hora,usuario_id,cliente_id) VALUES(now(),3, NULL);
+
